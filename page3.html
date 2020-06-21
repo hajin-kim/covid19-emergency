@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="utf-8">
+	<title>고용안정지원금 영세자영업자 모의설문</title>
+	<link rel="stylesheet" type="text/css" href="./css/common.css">
+</head>
+<body>
+	<div class="header">
+		<h1>
+			<headcolor>긴급고용안정지원금</headcolor>(영세자영업자) 지원 대상 확인
+		</h1>
+	</div>
+
+	<div class="content">
+		<h2>
+			다음으로 2019년(작년) 소득 조건을 확인하겠습니다.
+		</h2>
+	</div>
+	
+	<div class="body">
+		<h3>
+			<li>다음 중 1가지 이상 해당되신다면, 2구간으로 지원하실 수 있습니다.</li>
+		</h3>
+		<h4>
+			가구소득은 계산이 어렵습니다. 가급적이면 소득/매출로 확인해주시기 바랍니다.<br>
+			소득/매출로 지원하실 수 없으시면 <a href="https://covid19.ei.go.kr/eisp/eih/es/cv/retrieveCv300Info.do">공식 홈페이지 모의확인</a>에서 "가구 건강보험료"로 계산해보세요.
+		</h4>
+		<form>
+			2019년 연소득 7천만 원 이하 <input type="checkbox" name="incomeTest" value="income2"><br>
+			2019년 연매출 2억 원 이하 <input type="checkbox" name="incomeTest" value="revenue2"><br>
+			최근 가구소득 중위 150% 이하 <input type="checkbox" name="incomeTest" value="family2">
+		</form>
+	</div>
+
+	<div class="body">
+		<h3>
+			<li>특히 다음 중 1가지 이상 해당되신다면, 1구간으로 지원하실 수 있습니다.<br>
+			1구간이시면 이후의 조건이 완화됩니다.</li>
+		</h3>
+		<form>
+			2019년 연소득 5천만 원 이하 <input type="checkbox" name="incomeTest" value="income1"><br>
+			2019년 연매출 1.5억 원 이하 <input type="checkbox" name="incomeTest" value="revenue1"><br>
+			최근 가구소득 중위 100% 이하 <input type="checkbox" name="incomeTest" value="family1">
+		</form>
+
+		</table>
+	</div>
+	
+	<div class="body">
+		<h3>
+			<li>구간을 확인하셨나요?</li>
+		</h3>
+		<form>
+			지원 불가능 <input type="radio" name="interval" value="null"><br>
+			2구간 <input type="radio" name="interval" value="2"><br>
+			1구간 <input type="radio" name="interval" value="1">
+		</form>
+	</div>
+
+	<!-- <div class="body">
+		<form>
+			2019년 연소득 <input type="text" name="income" ><br>
+			2019년 연매출 <input type="text" name="revenue"><br>
+			가구소득 <input type="text" name="family">
+		</form>
+	</div> -->
+
+	<div class="nextbox">
+		<!-- <button class="nextbutton" type="button" onclick="goBack()">이전으로</button> -->
+		<button class="nextbutton" type="button" onclick="location.href='page2.html'">이전으로</button>
+		<button class="nextbutton" type="button" 
+		onclick="location.href='page4.html'">다음으로</button>
+		<script>
+		function goBack() {
+		    window.history.back();
+		}
+		</script>
+	</div>
+
+	<div class="footer">
+		<a href="https://covid19.ei.go.kr/eisp/eih/es/cv/main.do">
+		코로나19 긴급고용안정지원금 바로가기 https://covid19.ei.go.kr/eisp/eih/es/cv/main.do</a><br>
+		본 모의설문은 이용자의 어떠한 정보도 전송 및 수집하지 않습니다.<br>
+		본 모의설문은 어떠한 법적 효력도 갖지 않습니다.<br>
+		본 모의설문은 개인이 제작하였으며 고용노동부 사업과는 어떠한 관련도 없습니다.<br>
+		Contact(e-mail): kimhajin@yonsei.ac.kr
+	</div>
+</body>
+</html>
