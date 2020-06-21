@@ -4,8 +4,10 @@
 	<meta charset="utf-8">
 	<title>고용안정지원금 영세자영업자 모의설문</title>
 	<link rel="stylesheet" type="text/css" href="./css/common.css">
+
 </head>
 <body>
+
 	<div class="header">
 		<h1>
 			<headcolor>긴급고용안정지원금</headcolor>(영세자영업자) 지원 대상 확인
@@ -14,48 +16,63 @@
 
 	<div class="content">
 		<h2>
-			마지막으로 소득 감소 요건을 확인하겠습니다.
+			마지막으로 매출 감소 요건을 확인하겠습니다.
 		</h2>
 	</div>
 	
 	<div class="body">
 		<h3>
-			<li>다음 중 1가지 이상 해당되신다면, 2구간으로 지원하실 수 있습니다.</li>
-		</h3>
-		<h4>
-			가구소득은 계산이 어렵습니다. 가급적이면 소득/매출로 확인해주시기 바랍니다.<br>
-			소득/매출로 지원하실 수 없으시면 <a href="https://covid19.ei.go.kr/eisp/eih/es/cv/retrieveCv300Info.do">공식 홈페이지 모의확인</a>에서 "가구 건강보험료"로 계산해보세요.
-		</h4>
-		<form>
-			2019년 연소득 7천만 원 이하 <input type="checkbox" name="incomeTest" value="income2"><br>
-			2019년 연매출 2억 원 이하 <input type="checkbox" name="incomeTest" value="revenue2"><br>
-			최근 가구소득 중위 150% 이하 <input type="checkbox" name="incomeTest" value="family2">
-		</form>
-	</div>
-
-	<div class="body">
-		<h3>
-			<li>특히 다음 중 1가지 이상 해당되신다면, 1구간으로 지원하실 수 있습니다.<br>
-			1구간이시면 이후의 조건이 완화됩니다.</li>
+			<li>구간을 다시 한 번 체크해주세요.</li>
 		</h3>
 		<form>
-			2019년 연소득 5천만 원 이하 <input type="checkbox" name="incomeTest" value="income1"><br>
-			2019년 연매출 1.5억 원 이하 <input type="checkbox" name="incomeTest" value="revenue1"><br>
-			최근 가구소득 중위 100% 이하 <input type="checkbox" name="incomeTest" value="family1">
+			지원 불가능 <input type="radio" id="interval" value="null"><br>
+			2구간 <input type="radio" id="interval" value="2"><br>
+			1구간 <input type="radio" id="interval" value="1">
 		</form>
-
-		</table>
 	</div>
 	
 	<div class="body">
 		<h3>
-			<li>구간을 확인하셨나요?</li>
+			<li>먼저 2020년 3~4월의 매출액을 숫자만 적어주세요.</li>
 		</h3>
+		<h4>
+			과거 매출액보다 얼마나 감소했는지를 비교해야 합니다.
+		</h4>
 		<form>
-			지원 불가능 <input type="radio" name="interval" value="null"><br>
-			2구간 <input type="radio" name="interval" value="2"><br>
-			1구간 <input type="radio" name="interval" value="1">
+			2020년 3월 매출액 <input type="text" id="rev202003">원<br>
+			2020년 4월 매출액 <input type="text" id="rev202004">원
 		</form>
+	</div>
+
+	<div class="body">
+		<h3>
+			<li>다음 기간의 매출액 중 가장 큰 것을 골라 숫자만 적어주세요.</li>
+		</h3>
+		<h4>
+			1개만 골라서 적어주시면 됩니다. 과거 매출액이 클 수록 유리합니다.
+		</h4>
+		2019년 월평균(19년 총매출÷12)<br>
+		2019년 3월<br>
+		2019년 4월<br>
+		2019년 12월<br>
+		2020년 1월<br>
+		<form>
+			가장 큰 매출액 <input type="text" id="revmax">원
+		</form>
+
+		</table>
+	</div>
+
+	<div class="body">
+		<h3>
+			<li>소득 감소율을 계산합니다.</li>
+		</h3>
+		<h4>
+			1구간은 25% 이상, 2구간은 50% 이상 감소한 경우 지원하실 수 있습니다.
+		</h4>
+		<!-- <button class="nextbutton" type="button" onclick="goBack()">이전으로</button> -->
+		<button class="nextbutton" type="button" onclick="calculate()">계산하기</button><br>
+		결과: <output id="display"></output>
 	</div>
 
 	<!-- <div class="body">
@@ -86,5 +103,18 @@
 		본 모의설문은 개인이 제작하였으며 고용노동부 사업과는 어떠한 관련도 없습니다.<br>
 		Contact(e-mail): kimhajin@yonsei.ac.kr
 	</div>
+
+	<script>
+	function calculate() {
+		var rev202003 = document.getElementById('rev202003').value;
+		var rev202004 = document.getElementById('rev202004').value;
+		var revmax = document.getElementById('revmax').value;
+
+		var result = 100 - (eval(rev202003+"+"+rev202004)/2) / revmax * 100;
+		// var result = eval("("+rev202003+"+"rev202004+")"+"/"+revmax);
+
+		document.getElementById('display').value = result + "%";
+	}
+	</script>
 </body>
 </html>
