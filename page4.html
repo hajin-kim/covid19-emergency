@@ -4,10 +4,8 @@
 	<meta charset="utf-8">
 	<title>고용안정지원금 영세자영업자 모의설문</title>
 	<link rel="stylesheet" type="text/css" href="./css/common.css">
-
 </head>
 <body>
-
 	<div class="header">
 		<h1>
 			<headcolor>긴급고용안정지원금</headcolor>(영세자영업자) 지원 대상 확인
@@ -16,83 +14,46 @@
 
 	<div class="content">
 		<h2>
-			마지막으로 매출 감소 요건을 확인하겠습니다.
+			잠깐! 신청하시기 전에 중복 수령을 체크하세요.
 		</h2>
 	</div>
 	
 	<div class="body">
 		<h3>
-			<li>구간을 다시 한 번 체크해주세요.</li>
+			<li>자치단체 사업은 <highlight>중복 수령 가능</highlight>합니다.</li>
 		</h3>
-		<form>
-			지원 불가능 <input type="radio" id="interval" value="null"><br>
-			2구간 <input type="radio" id="interval" value="2"><br>
-			1구간 <input type="radio" id="interval" value="1">
-		</form>
-	</div>
-
-	<div class="body">
-		<h3>
-			<li>아래의 과거 매출액 중 가장 큰 것을 선택해 숫자만 적어주세요.</li>
-		</h3>
-		<h4>
-			1개만 골라서 적어주시면 됩니다. 과거 매출액이 클 수록 유리합니다.
-		</h4>
-		2019년 월평균(2019년 총매출÷12)<br>
-		2019년 3월<br>
-		2019년 4월<br>
-		2019년 12월<br>
-		2020년 1월<br>
-		<form>
-			가장 큰 매출액 <input type="text" id="revmax">원
-		</form>
-
-		</table>
+		긴급재난지원금<br>
+		자치단체 재난지원금<br>
+		자치단체 자체 소상공인 안정 사업
 	</div>
 	
 	<div class="body">
 		<h3>
-			<li>2020년 3~4월의 매출액을 숫자만 적어주세요.</li>
+			<li>중앙정부 사업은 중복 수령이 불가능합니다.</li>
 		</h3>
-		<h4>
-			과거 매출액보다 얼마나 감소했는지를 비교해야 합니다.
-		</h4>
-		<form>
-			2020년 3월 매출액 <input type="text" id="rev202003">원<br>
-			2020년 4월 매출액 <input type="text" id="rev202004">원
-		</form>
+		긴급복지지원제도
 	</div>
-
+	
 	<div class="body">
 		<h3>
-			<li>소득 감소율을 계산합니다.</li>
+			<li>단, 이미 받은 금액이 150만 원보다 적으면, 그 차이만큼 받으실 수 있습니다.</li>
 		</h3>
-		<h4>
-			1구간은 25% 이상, 2구간은 50% 이상으로 계산된 경우 지원하실 수 있습니다.
-		</h4>
-		<!-- <button class="nextbutton" type="button" onclick="goBack()">이전으로</button> -->
-		<button class="nextbutton" type="button" onclick="calculate()">계산하기</button><br>
-		결과: <output id="display"></output>
+		지역고용대응 등 특별지원 사업<br>
+		취업성공패키지<br>
+		청년구직활동지원금<br>
+		가족돌봄비용 긴급지원
 	</div>
-
-	<!-- <div class="body">
-		<form>
-			2019년 연소득 <input type="text" name="income" ><br>
-			2019년 연매출 <input type="text" name="revenue"><br>
-			가구소득 <input type="text" name="family">
-		</form>
-	</div> -->
+	
+	<div class="body">
+		<h3>
+			<li><a href="https://covid19.ei.go.kr/eisp/eih/es/cv/retrieveCv200Info.do">고용안정지원금 온라인 신청 바로가기<br>
+			https://covid19.ei.go.kr/eisp/eih/es/cv/retrieveCv200Info.do</a></li>
+		</h3>
+	</div>
 
 	<div class="nextbox">
 		<!-- <button class="nextbutton" type="button" onclick="goBack()">이전으로</button> -->
 		<button class="nextbutton" type="button" onclick="location.href='page3.html'">이전으로</button>
-		<button class="nextbutton" type="button" 
-		onclick="location.href='page5.html'">다음으로</button>
-		<script>
-		function goBack() {
-		    window.history.back();
-		}
-		</script>
 	</div>
 
 	<div class="footer">
@@ -105,15 +66,8 @@
 	</div>
 
 	<script>
-	function calculate() {
-		var rev202003 = document.getElementById('rev202003').value;
-		var rev202004 = document.getElementById('rev202004').value;
-		var revmax = document.getElementById('revmax').value;
-
-		var result = 100 - (eval(rev202003+"+"+rev202004)/2) / revmax * 100;
-		// var result = eval("("+rev202003+"+"rev202004+")"+"/"+revmax);
-
-		document.getElementById('display').value = result + "%";
+	function goBack() {
+	    window.history.back();
 	}
 	</script>
 </body>
