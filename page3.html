@@ -27,10 +27,10 @@
 			2019년 연매출 <input type="text" id="revenue2019">만 원<br>
 			2019년 연소득 <input type="text" id="income2019">만 원
 		</form>
-		<h4>
+		<!-- <h4>
 			매출/소득이 아닌 가구소득 백분위로 계산하는 방법도 있습니다.<br>
 			<a href="https://covid19.ei.go.kr/eisp/eih/es/cv/retrieveCv300Info.do">공식 홈페이지 모의확인</a>에서 "가구 건강보험료"로 계산하실 수 있습니다.
-		</h4>
+		</h4> -->
 	</div>
 
 	<div class="body">
@@ -55,9 +55,9 @@
 		<h3>
 			<li>2020년 3~4월의 매출액을 <highlight>만 원 단위로 숫자만</highlight> 적어주세요.</li>
 		</h3>
-		<h4>
+		<!-- <h4>
 			과거 매출액보다 얼마나 감소했는지를 비교해야 합니다.
-		</h4>
+		</h4> -->
 		<form>
 			2020년 3월 매출액 <input type="text" id="rev202003">만 원<br>
 			2020년 4월 매출액 <input type="text" id="rev202004">만 원
@@ -67,10 +67,10 @@
 
 	<div class="body">
 		<h3>
-			<li>지원 가능 여부를 계산합니다.</li>
+			<li>지원 가능 여부를 확인합니다.</li>
 		</h3>
 		<!-- <button class="nextbutton" type="button" onclick="goBack()">이전으로</button> -->
-		<button class="nextbutton" type="button" onclick="calculate()">계산하기</button><br>
+		<button class="nextbutton" type="button" onclick="calculate()">확인하기</button><br>
 		결과: 
 		<h3><highlight>
 			<output id="display"></output>
@@ -152,7 +152,7 @@
 			document.getElementById('display').value = "지원 가능합니다. 다음 페이지로 이동해주시기 바랍니다.";
 		}
 		else {
-			document.getElementById('display').value = "지원 불가능합니다. 공식 홈페이지에서 가구 중위소득으로 계산해보시기 바랍니다.";
+			document.getElementById('display').value = "지원 불가능합니다. 공식 홈페이지에서 \"가구 중위소득\"으로 계산해보시기 바랍니다.";
 		}
 	}
 	</script>
