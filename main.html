@@ -32,7 +32,7 @@
 			<li>2019년 12월 ~ 2020년 1월 기간 매출이 있으셔야 합니다.</li>
 		</h3>
 		<form>
-			있음 <input type="radio" name="revenueExists" value="y">
+			<input type="radio" name="revenueExists" value="y"> 있음
 		</form>
 	</div>
 
@@ -41,10 +41,62 @@
 			<li>자영업자 또는 소상공인이셔야 합니다.</li>
 		</h3>
 		<form>
-			1인 자영업자 <input type="radio" name="isSelfEmployed" value="1" align="right"><br>
-			소상공인: 상시 근로자 5명 미만 <input type="radio" name="isSelfEmployed" value="5"><br>
-			소상공인: 상시 근로자 10명 미만, 광업ㆍ제조업ㆍ건설업ㆍ운수업 <input type="radio" name="isSelfEmployed" value="10">
+			<input type="radio" name="isSelfEmployed" value="1" align="right"> 1인 자영업자<br>
+			<input type="radio" name="isSelfEmployed" value="5"> 소상공인: 상시 근로자 5명 미만<br>
+			<input type="radio" name="isSelfEmployed" value="10"> 소상공인: 상시 근로자 10명 미만, 광업ㆍ제조업ㆍ건설업ㆍ운수업
 		</form>
+	</div>
+	
+	<div class="body">
+		<h3>
+			<li>다음 업종은 지원받으실 수 없습니다.</li>
+		</h3>
+		<table align="center" border="1" cellpadding="5">
+			<th>표준산업분류</th>
+			<th>업종</th>
+			<tr>
+				<td>56211</td>
+				<td>일반유흥주점업</td>
+			</tr>
+			<tr>
+				<td>56212</td>
+				<td>무도유흥주점업</td>
+			</tr>
+			<tr>
+				<td>58211, 58212, 58219 중</td>
+				<td>도박 및 사행성, 불건전 게임 S/W 개발 및 공급업</td>
+			</tr>
+			<tr>
+				<td>91113</td>
+				<td>경주장 및 동물 경기장 운영업</td>
+			</tr>
+			<tr>
+				<td>9122 중</td>
+				<td>성인용게임장, 성인오락실, 성인PC방, 전화방</td>
+			</tr>
+			<tr>
+				<td>91221 중</td>
+				<td>성인용 게임장 운영업</td>
+			</tr>
+			<tr>
+				<td>91249</td>
+				<td>기타 사행시설 관리 및 운영업</td>
+			</tr>
+			<tr>
+				<td>91291</td>
+				<td>무도장 운영업 (예: 댄스홀, 콜라텍 등)</td>
+			</tr>
+			<tr>
+				<td>9612 중</td>
+				<td>이 중, 불건전 터키탕업, 안마시술소 등</td>
+			</tr>
+			<tr>
+				<td>96999 중</td>
+				<td>휴게텔, 키스방, 대화방</td>
+			</tr>
+
+
+		</table>
 	</div>
 
 	<div class="nextbox">
@@ -52,7 +104,7 @@
 		<button class="nextbutton" type="button" onclick="goBack()">이전으로</button>
 	-->
 		<button class="nextbutton" type="button" 
-		onclick="location.href='page2.html'">다음으로</button>
+		onclick="location.href='page3.html'">다음으로</button>
 	</div>
 
 	<div class="footer">
