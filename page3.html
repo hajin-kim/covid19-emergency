@@ -40,7 +40,7 @@
 		<h4>
 			1개만 골라서 적어주시면 됩니다. 과거 매출액이 클 수록 유리합니다.
 		</h4>
-		2019년 월평균 (연매출÷12) <button class="nextbutton" type="button" onclick="calculateRevAve()">연매출로 자동계산</button><br>
+		2019년 월평균 (연매출÷12) <button class="nextbutton" type="button" onclick="calculateRevAve()" style="font-size: 1.0em;">연매출로 자동계산</button><br>
 		2019년 3월<br>
 		2019년 4월<br>
 		2019년 12월<br>
@@ -108,7 +108,7 @@
 	}
 	function calculateRevAve() {
 		var revenue2019 = document.getElementById('revenue2019').value;
-		if (revenue2019 == "") {return;}
+		if (revenue2019 == "" || isNaN(revenue2019)) {return;}
 		document.getElementById('revmax').value = (revenue2019 / 12).toFixed(1);
 	}
 	function calculate() {
@@ -123,19 +123,25 @@
 		var dec;
 
 		if (!income2019 && !revenue2019) {
-			document.getElementById('display').value = "2019년 연매출/연소득 중 적어도 1개 이상 적어주시기 바랍니다.";
+			document.getElementById('display').value = "2019년 연매출/연소득 중 적어도 1개 이상 숫자만 적어주시기 바랍니다.";
 			return;
 		}
-		if (!revmax) {
-			document.getElementById('display').value = "가장 큰 과거 매출액을 적어주시기 바랍니다.";
-			return;
-		}
-		if (!rev202003 || !rev202004) {
-			document.getElementById('display').value = "2020년 3~4월 매출액을 적어주시기 바랍니다."
+		if (isNaN(income2019) || isNaN(revenue2019)) {
+			document.getElementById('display').value = "2019년 연매출/연소득 중 적어도 1개 이상 숫자만 적어주시기 바랍니다.";
 			return;
 		}
 
-		dec = 100 - (eval(rev202003+"+"+rev202004)/2) / revmax * 100;
+		if (!revmax || isNaN(revmax)) {
+			document.getElementById('display').value = "가장 큰 과거 매출액을 숫자만 적어주시기 바랍니다.";
+			return;
+		}
+
+		if (!rev202003 || isNaN(rev202003) || !rev202004 || isNaN(rev202004)) {
+			document.getElementById('display').value = "2020년 3~4월 매출액을 숫자만 적어주시기 바랍니다.";
+			return;
+		}
+
+		dec = 100 - (eval(rev202003+"+"+rev202004)/2) * 100 / revmax;
 		// document.getElementById('display').value = dec + "%";
 
 		if ((income2019 && income2019 <= 5000) || (revenue2019 && revenue2019 <= 15000)) {
